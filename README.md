@@ -172,8 +172,16 @@ func multiple(a int, s string) (result int, name string) {
 }
 ```
 
-
 - named returns are already created and ready to use inside the function
+
+# Public and Private
+
+- Declaring constants/variables/functons/methods - when they can be called.
+- Public 
+  - Exported
+  - Must be declared outside functions/methods
+  - must start with Capital letterv
+- Private
 
 # Common bugs / things to remember
 - you can only create a variable that does not exist
