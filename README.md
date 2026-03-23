@@ -114,7 +114,7 @@ go build main.go
     i++
   }
   ```
-  
+
   or,
 
   ```go
@@ -132,12 +132,30 @@ go build main.go
   }
   ```
 
+# Conditionals
+- `if/else`
+- `switch`
+
+  ```go
+  if [evaluation] {
+      // execute/do something
+  } else if [evaluation] {
+      // execute/do something else
+  } else {
+      // execute/do something else
+  }
+  ```
+
+> go has the ability to execute a statement within the if scope before the evaluation is made.
+> we can call it shortly - "short-circuit evaluation" or "statement in condition".
+
 # Common bugs / things to remember
 - **variable shadowing**
   - solution: don't use variables of same name in multiple places.
 - a declared package must be used
 - a declared variable must be used
 - **for loops open braces must be on the same line as the for keyword.**
+- for `if else` conditionals, if there is another statement in chain, it must start on the same line at the previous one ends.
 
 
 > minhaj was here
