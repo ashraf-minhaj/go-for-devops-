@@ -149,13 +149,45 @@ go build main.go
 > go has the ability to execute a statement within the if scope before the evaluation is made.
 > we can call it shortly - "short-circuit evaluation" or "statement in condition".
 
+# Function
+
+- multiple returns values supported
+- **variadic argument** - provide unknown number of argument to a function
+- named return values
+
+```go
+func sum(a int, b int) int {
+	return a + b
+}
+```
+
+named returns -
+
+```go
+func multiple(a int, s string) (result int, name string) {
+	result = a * 2
+	name = s + " boss"
+
+	return result, name
+}
+```
+
+
+- named returns are already created and ready to use inside the function
+
 # Common bugs / things to remember
+- you can only create a variable that does not exist
 - **variable shadowing**
   - solution: don't use variables of same name in multiple places.
 - a declared package must be used
 - a declared variable must be used
 - **for loops open braces must be on the same line as the for keyword.**
 - for `if else` conditionals, if there is another statement in chain, it must start on the same line at the previous one ends.
+- `println` vs `fmt.Println` 
+  - println is built into program for developers only.
+    - not meant for production use
+    - reports to `stderr`
+  - fmt.Println is for production use
+    - reports to `stdout`
 
-
-> minhaj was here
+> `go1.25.3` ashraf-minhaj was here
