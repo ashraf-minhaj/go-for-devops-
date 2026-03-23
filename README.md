@@ -97,6 +97,41 @@ go build main.go
 - the lack of awareness of variable type makes python to run the whole code and show error during runtime.
 - Btter to find the error at compilation rather than while running it.
 
+# Loop
+- for loop
+  
+  ```go
+  for i := 0; i < 10; i++ {
+    fmt.Println(i)
+  }
+  ```
+- for without the post statement - **while** loop
+
+  ```go
+  i := 0
+  for i < 10 {
+    fmt.Println(i)
+    i++
+  }
+  ```
+  
+  or,
+
+  ```go
+  run = true
+  for run {
+    fmt.Println("Running since I was born")
+  }
+  ```
+
+- for without anything - **infinite** loop
+
+  ```go
+  for {
+    fmt.Println("shit")
+  }
+  ```
+
 # Common bugs / things to remember
 - **variable shadowing**
   - solution: don't use variables of same name in multiple places.
