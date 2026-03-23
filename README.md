@@ -97,9 +97,12 @@ go build main.go
 - the lack of awareness of variable type makes python to run the whole code and show error during runtime.
 - Btter to find the error at compilation rather than while running it.
 
-# Common bugs
+# Common bugs / things to remember
 - **variable shadowing**
   - solution: don't use variables of same name in multiple places.
 - a declared package must be used
 - a declared variable must be used
+- **for loops open braces must be on the same line as the for keyword.**
+
+
 > minhaj was here
