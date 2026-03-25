@@ -1,4 +1,8 @@
 # go for devops 
+Learning golang to see how it can help me as a DevOps Engineer. In this repo, you will all the practice scripts under the [/learning](./learning/) directory. And cool DevOps projects under the [/projects](./projects/) directory. Golang basics and study notes can be found in this readme.
+
+# Table of Index
+
 
 ## Why should I learn Golang as a DevOps Engineer?
 
@@ -188,21 +192,31 @@ func multiple(a int, s string) (result int, name string) {
 - int
 - float
 - string
-- list
+- bool
+- **list**
   - fixed size, can not grow
   - `[<size>]<data_type>{value/empty}` - `[3]string{"min", "ha", "j"}`
-- slice
+- **slice**
   - array but with no size constraint, can grow.
   - `[<empty>]<data_type>{value/empty}` - `[]string{"min", "ha", "j"}`
-- map
+- **map**
   - key value pairs (dict in Python)
   - can grow beyond it's size declared. So size is optional here.
   - maps have `non-deterministic` order - on each iteration data order will be different. why?
   - declare using *make* `make(map[<key_data_type>]<value_data_type>, size)` - `make(map[string]int, 10)`
   - declare using composite literal - `map[int]string{}`
+- **pointers**
+  - under the hood of each variable, the memory allocator allocates a space (memory address) to store value to.
+  - prepend `&` before a variable to see the mem addr. `print(`&a`)` 
+  - function arguments are copies. Changing a value passed to the functon inside the the function does not change the original.
+  - *Pointer stores the address of a value, not hte value itself*.
+    - *stack* - for exclusive use for function/method call. is faster than heap.
+    - *heap allocation* - when it cant determine to live exclusively in a function call.
+  - *Use a. pointer on long live objects and where the copy might be expensive*.
 
 # Common bugs / things to remember
 - you can only create a variable that does not exist
+  - a declared variable must be used or assigned to nothing - ` _ = a`
 - **variable shadowing**
   - solution: don't use variables of same name in multiple places.
 - a declared package must be used
@@ -218,6 +232,11 @@ func multiple(a int, s string) (result int, name string) {
 - get data type of a variable
   - `fmt.Println("%T\n", name)         // does not work`
   - `fmt.Println(reflect.TypeOf(name)) // works`
-
-
+- go is a garbage collected language
+  - how to solve garbage collection? [see what go officially says](https://go.dev/doc/gc-guide)
+- go's memory model is heap/stack model.
+  - compiler does `escape analysis` - what is that? 
+    - a compiler optimization technique that determines the appropriate memory location (stack or heap) for a variable based on its lifetime
+  - *stack* - for exclusive use for function/method call. is faster than heap.
+  - *heap allocation* - when it cant determine to live exclusively in a function call.
 > `go1.25.3` ashraf-minhaj was here
