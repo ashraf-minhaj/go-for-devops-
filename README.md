@@ -183,6 +183,24 @@ func multiple(a int, s string) (result int, name string) {
   - must start with Capital letterv
 - Private
 
+# Data types
+(most common)
+- int
+- float
+- string
+- list
+  - fixed size, can not grow
+  - `[<size>]<data_type>{value/empty}` - `[3]string{"min", "ha", "j"}`
+- slice
+  - array but with no size constraint, can grow.
+  - `[<empty>]<data_type>{value/empty}` - `[]string{"min", "ha", "j"}`
+- map
+  - key value pairs (dict in Python)
+  - can grow beyond it's size declared. So size is optional here.
+  - maps have `non-deterministic` order - on each iteration data order will be different. why?
+  - declare using *make* `make(map[<key_data_type>]<value_data_type>, size)` - `make(map[string]int, 10)`
+  - declare using composite literal - `map[int]string{}`
+
 # Common bugs / things to remember
 - you can only create a variable that does not exist
 - **variable shadowing**
@@ -197,5 +215,9 @@ func multiple(a int, s string) (result int, name string) {
     - reports to `stderr`
   - fmt.Println is for production use
     - reports to `stdout`
+- get data type of a variable
+  - `fmt.Println("%T\n", name)         // does not work`
+  - `fmt.Println(reflect.TypeOf(name)) // works`
+
 
 > `go1.25.3` ashraf-minhaj was here

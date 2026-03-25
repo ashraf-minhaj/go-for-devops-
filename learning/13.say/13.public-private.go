@@ -12,5 +12,5 @@ func main() {
 	fmt.Println(say.OutsideValue)
 
 	// fmt.Println(say.OutsideValue2) // says undefined - because it's private
-	// fmt.Print(say.PrintHello().InsideValue) // not possible because InsideValue is not accessible outside of the function
+	// fmt.Print(say.PrintHello().InsideValue) // not possible because InsideValue is not accessible outside of the function 
 }
