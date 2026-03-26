@@ -205,7 +205,7 @@ func multiple(a int, s string) (result int, name string) {
   - maps have `non-deterministic` order - on each iteration data order will be different. why?
   - declare using *make* `make(map[<key_data_type>]<value_data_type>, size)` - `make(map[string]int, 10)`
   - declare using composite literal - `map[int]string{}`
-- **pointers**
+- pointers
   - under the hood of each variable, the memory allocator allocates a space (memory address) to store value to.
   - prepend `&` before a variable to see the mem addr. `print(`&a`)` 
   - function arguments are copies. Changing a value passed to the functon inside the the function does not change the original.
@@ -213,6 +213,10 @@ func multiple(a int, s string) (result int, name string) {
     - *stack* - for exclusive use for function/method call. is faster than heap.
     - *heap allocation* - when it cant determine to live exclusively in a function call.
   - *Use a. pointer on long live objects and where the copy might be expensive*.
+- structs
+  - collection of variables.
+  - used to create custom types in Go that are reusable.
+
 
 # Common bugs / things to remember
 - you can only create a variable that does not exist
